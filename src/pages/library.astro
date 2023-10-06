@@ -1,5 +1,7 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
+import Navigation from '../components/Navigation.astro';
+import '../styles/global.css';
 
 const title = "Чайна Хатинка | Читальня";
 ---
@@ -8,14 +10,16 @@ const title = "Чайна Хатинка | Читальня";
 	<BaseHead {title}/>
     <body>
         <header>
-            <nav>
-                <a href="/">Хатинка</a>
-                <a href="/about/">Про нас</a>
-                <a href="/library/">Читальня</a>
-            </nav>
+            <Navigation />
         </header>
-    
-        <h1>Наша Читальня</h1>
-        <p>This is where I will post about my journey learning Astro.</p>
+        <main>
+            <h1>Наша Читальня</h1>
+            <p>This is where I will post about my journey learning Astro.</p>
+            <ul>
+                <li><a href="/library/the-eight-bowls/">Вісім чаш життя в чаї</a></li>
+                <li><a href="/library/the-fivefold-essence/">П'ять складових сутности Чаю</a></li>
+                <li><a href="/library/the-four-pillars/">Чотири стовпи цієї Традиції</a></li>
+            </ul>
+        </main>
     </body>
 </html>

@@ -1,6 +1,8 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import Social from "../components/Social.astro";
+import Footer from "../components/Footer.astro";
+import Navigation from '../components/Navigation.astro';
+import '../styles/global.css';
 
 const title = "Чайна Хатинка";
 const dateNow = new Date().getFullYear().toString();
@@ -10,44 +12,23 @@ const dateNow = new Date().getFullYear().toString();
 	<BaseHead {title}/>
 	<body>
 		<header>
-			<nav>
-				<a href="/">Хатинка</a>
-    			<a href="/about/">Про нас</a>
-    			<a href="/library/">Читальня</a>
-			</nav>
+			<Navigation />
 		</header>
 		<main>
-			<h1>"Хатикна Чайного Мудреця"</h1>
+			<h1>"Хатинка Чайного Мудреця"</h1>
 			<div class="card">
-				<img src="https://via.placeholder.com/100" alt="">
+				<img src="https://via.placeholder.com/150" alt="">
 				<div class="content-container">
 				  <h4>Lorem ipsum</h4>
 				  <p>Lorem ipsum dolor sit amet.</p>
 				</div>
 			</div>
 		</main>
-		<footer class="footer">
-            <Social />
-            <small class="copyright">&copy; TEAHUT.COM.UA
-                <span class="date">2014 - {dateNow}</span></br>
-                All rights reserved.
-            </small>
-        </footer>
+		<Footer />
 	</body>
 </html>
 
-<style is:global>
-	* {
-	  margin: 0;
-	  padding: 0;
-	}
-	
-	body {
-	  min-height: 100vh;
-	  display: grid;
-	  grid-template-rows: auto 1fr auto;
-	}
-
+<style>
 	.card {
 		max-width: 600px;
 		display: grid;

@@ -1,0 +1,50 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Navigation from '../components/Navigation.astro';
+import '../styles/global.css';
+
+const title = "Чайна Хатинка | Про нас";
+---
+
+<html lang="uk">
+	<BaseHead {title}/>
+    <body>
+        <header>
+            <Navigation />
+        </header>
+        <main>
+            <h1>Про наші чаї</h1>
+            <h2>...і трішечки начиння.</h2>
+        
+            <div class="card">
+                <img src="https://via.placeholder.com/150" alt="">
+                <div class="content-container">
+                  <h4>Lorem ipsum</h4>
+                  <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
+
+<style>
+	.card {
+		max-width: 600px;
+		display: grid;
+		grid: "card-media card-content" / auto 1fr;
+		margin: 5rem auto;
+		box-shadow: 2px 1px 3px #0004, 0 0 2px #0003;
+	}
+
+	.card > .content-container {
+		padding: 1rem;
+	}
+
+	.card > .content-container h4 {
+		font-size: 1.25rem;
+	}
+
+	.card > .content-container p {
+		margin-top: 2px;
+	}
+</style>

@@ -37,6 +37,11 @@ const dateNow = new Date().getFullYear().toString();
 		box-shadow: 2px 1px 3px #0004, 0 0 2px #0003;
 	}
 
+	.card > img {
+		height: 120px;
+		aspect-ratio: 1/1;
+	}
+
 	.card > .content-container {
 		padding: 1rem;
 	}
@@ -48,4 +53,11 @@ const dateNow = new Date().getFullYear().toString();
 	.card > .content-container p {
 		margin-top: 2px;
 	}
+
+	@media screen and (min-width: 640px) {
+		.card > img {
+			height: 150px;
+			aspect-ratio: 16/9;
+	}
+}
 </style>

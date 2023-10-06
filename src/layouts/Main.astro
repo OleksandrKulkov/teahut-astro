@@ -1,0 +1,70 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Social from "../components/Social.astro";
+
+const title = "Чайна Хатинка";
+const dateNow = new Date().getFullYear().toString();
+---
+
+<html lang="uk">
+	<BaseHead {title}/>
+	<body>
+		<header>
+			<nav>
+				<a href="/">Home</a>
+    			<a href="/about/">Про нас</a>
+    			<a href="/library/">Читальня</a>
+			</nav>
+		</header>
+		<main>
+			<h1>"Хатикна Чайного Мудреця"</h1>
+			<div class="card">
+				<img src="https://via.placeholder.com/100" alt="">
+				<div class="content-container">
+				  <h4>Lorem ipsum</h4>
+				  <p>Lorem ipsum dolor sit amet.</p>
+				</div>
+			</div>
+		</main>
+		<footer class="footer">
+            <Social />
+            <small class="copyright">&copy; TEAHUT.COM.UA
+                <span class="date">2014 - {dateNow}</span></br>
+                All rights reserved.
+            </small>
+        </footer>
+	</body>
+</html>
+
+<style is:global>
+	* {
+	  margin: 0;
+	  padding: 0;
+	}
+	
+	body {
+	  min-height: 100vh;
+	  display: grid;
+	  grid-template-rows: auto 1fr auto;
+	}
+
+	.card {
+		max-width: 600px;
+		display: grid;
+		grid: "card-media card-content" / auto 1fr;
+		margin: 5rem auto;
+		box-shadow: 2px 1px 3px #0004, 0 0 2px #0003;
+	}
+
+	.card > .content-container {
+		padding: 1rem;
+	}
+
+	.card > .content-container h4 {
+		font-size: 1.25rem;
+	}
+
+	.card > .content-container p {
+		margin-top: 2px;
+	}
+</style>

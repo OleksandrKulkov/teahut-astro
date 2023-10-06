@@ -1,20 +1,25 @@
 ---
+import BaseHead from "../components/BaseHead.astro";
 
+const title = "Чайна Хатинка | Про нас";
 ---
 
-<body>
-    <header>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/about/">Про нас</a>
-            <a href="/library/">Читальня</a>
-        </nav>
-    </header>
+<html lang="uk">
+	<BaseHead {title}/>
+    <body>
+        <header>
+            <nav>
+                <a href="/">Хатинка</a>
+                <a href="/about/">Про нас</a>
+                <a href="/library/">Читальня</a>
+            </nav>
+        </header>
 
-    <h1>About Me</h1>
-    <h2>... and my new Astro site!</h2>
-  
-    <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
-  
-    <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
-</body>
+        <h1>About Me</h1>
+        <h2>... and my new Astro site!</h2>
+    
+        <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
+    
+        <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
+    </body>
+</html>

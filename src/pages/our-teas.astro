@@ -3,20 +3,15 @@ import BaseHead from "../components/BaseHead.astro";
 import Navigation from '../components/Navigation.astro';
 import Card from "../components/Card.astro";
 import '../styles/global.css';
+import Main from "../layouts/Main.astro";
 
-const title = "Чайна Хатинка | Про нас";
+const title = "Чайна Хатинка | Про наші чаї";
 ---
 
-<html lang="uk">
-	<BaseHead {title}/>
-    <body>
-        <header>
-            <Navigation />
-        </header>
-        <main>
-            <h1>Про наші чаї</h1>
-            <h2>...і трішечки начиння.</h2>
-            <Card />    
-        </main>
-    </body>
-</html>
+<Main {title}>
+    <main>
+        <h1>Про наші чаї</h1>
+        <h2>...і трішечки начиння.</h2>
+        <Card />    
+    </main>
+</Main>

@@ -4,8 +4,7 @@ import Footer from "../components/Footer.astro";
 import Navigation from '../components/Navigation.astro';
 import '../styles/global.css';
 
-const title = "Чайна Хатинка";
-const dateNow = new Date().getFullYear().toString();
+const { title } = Astro.props;
 ---
 
 <html lang="uk">
@@ -14,52 +13,7 @@ const dateNow = new Date().getFullYear().toString();
 		<header>
 			<Navigation />
 		</header>
-		<main>
-			<h1>"Хатинка Чайного Мудреця"</h1>
-			<p>
-				Кожен із нас шукає своєї досконалости так, як він її розуміє, залежно від того знання і контексту, який він чи вона отримали за своє життя, та від того, що в нього закладено Природою...
-			</p>
-			<p>
-				Ми, як і багато хто до нас, шукаємо Довершености у своєму житті через Чай – через ту Традицію, підвалини якої було закладено дуже давно. Ми не намагаємося відкрити щось нове, досі невідоме. Навпаки, за допомогою простих метод ми глибше занурюємось у навколишнє, у те, що маємо саме цієї миті. Якщо Надзвичайне й існує, воно мусить бути тут і зараз...
-			</p>
-			<p>
-				Наш Шлях до Досконалости, Шлях Чаю ("Ча Дао", "Тя До", як його називають на Сході), пов'язаний зі звичним для людини процесом пиття – приготуванням і вживанням однієї з найдавніше відомих лікарських рослин у Світі. Мета цього – найкраща чашка чаю, що містить у собі Пробудження і Присутність для кожного з нас. Перед Природою і перед Чаєм, Її часточкою, ми всі рівні. Як то кажуть: "Стара хвіртка до Мудрости завжди відкрита. Дзен не має дверей..."
-			</p>
-		</main>
+		<slot />
 		<Footer />
 	</body>
 </html>
-
-<style>
-	.card {
-		max-width: 600px;
-		display: grid;
-		grid: "card-media card-content" / auto 1fr;
-		margin: 5rem auto;
-		box-shadow: 2px 1px 3px #0004, 0 0 2px #0003;
-	}
-
-	.card > img {
-		height: 120px;
-		aspect-ratio: 1/1;
-	}
-
-	.card > .content-container {
-		padding: 1rem;
-	}
-
-	.card > .content-container h4 {
-		font-size: 1.25rem;
-	}
-
-	.card > .content-container p {
-		margin-top: 2px;
-	}
-
-	@media screen and (min-width: 640px) {
-		.card > img {
-			height: 150px;
-			aspect-ratio: 16/9;
-	}
-}
-</style>

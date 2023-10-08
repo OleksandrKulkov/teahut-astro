@@ -2,6 +2,8 @@
 import Main from "../layouts/Main.astro";
 import '../styles/global.css';
 
+
+const allPosts = await Astro.glob('../pages/library/*.md');
 const title = "Чайна Хатинка | Читальня";
 ---
 
@@ -10,9 +12,7 @@ const title = "Чайна Хатинка | Читальня";
         <h1>Наша Читальня</h1>
         <p>This is where I will post about my journey learning Astro.</p>
         <ul>
-            <li><a href="/library/the-eight-bowls/">Вісім чаш життя в чаї</a></li>
-            <li><a href="/library/the-fivefold-essence/">П'ять складових сутности Чаю</a></li>
-            <li><a href="/library/the-four-pillars/">Чотири стовпи цієї Традиції</a></li>
+            {allPosts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
         </ul>
     </main>
 </Main>

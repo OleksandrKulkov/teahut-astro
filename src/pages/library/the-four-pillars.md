@@ -44,5 +44,5 @@ tags: ["astro", "learning in public", "setbacks", "community"]
 
 <p>&nbsp;</p>
 <p style="text-align: right; font-size: 0.9rem"><em>Статтю було надруковано в першому числі</em><br /><em>часопису "<a href="http://www.globalteahut.org/" target="_blank" rel="noopener noreferrer">Global Tea Hut</a>" у лютому 2012 року.</em><br /><em>Перекладено спеціяльно для TeaHut.com.ua</em></p>
-<p><img style="float: right;" src="/images/teakettle.gif" alt="teakettle" /></p>
+<p><img style="float: right;" src="/teakettle.gif" alt="teakettle" /></p>
 <p>&nbsp;</p>

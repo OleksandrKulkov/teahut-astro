@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownArticle.astro
 title: Вісім чаш життя в чаї
 pubDate: 2022-07-01
 description: 'This is the first post of my new Astro blog.'
@@ -85,5 +86,5 @@ tags: ["astro", "blogging", "learning in public"]
 
 <p>&nbsp;</p>
 <p style="text-align: right; font-size: 0.9rem"><em>Стаття з'явилася в часописі</em><br /><em>"Global Tea Hut" у лютому 2013 року.</em><br /><em>Перекладено спеціяльно для <em>teahut.com.ua</em></em></p>
-<p><img style="float: right;" src="/images/teakettle.gif" alt="teakettle" /></p>
+<p><img style="float: right;" src="/teakettle.gif" alt="teakettle" /></p>
 <p>&nbsp;</p>

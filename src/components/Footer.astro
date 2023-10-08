@@ -6,15 +6,24 @@ const dateNow = new Date().getFullYear().toString();
 
 <footer>
     <Social />          
-    <p class="copyright">&copy; TEAHUT.COM.UA
-        <span class="date">2014 - {dateNow}</span></p>
-    <p class="copyright">All rights reserved.</p>
+    <div class="copyrights">
+        <small>
+            &copy; TEAHUT.COM.UA <span>{dateNow}</span> |
+            All rights reserved
+        </small>
+    </div>
 </footer> 
 
 <style>
-    .copyright {
+    footer {
+        margin: 2rem 0 1rem;
+    }
+    .copyrights {
         display: flex;
         justify-content: center;
-        font-size: 0.8rem;
+    }
+
+    br {
+        display: none;
     }
 </style>

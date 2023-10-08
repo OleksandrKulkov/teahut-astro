@@ -1,10 +1,9 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Navigation from '../components/Navigation.astro';
 import Card from "../components/Card.astro";
 import '../styles/global.css';
 import Main from "../layouts/Main.astro";
 
+const allTeas = await Astro.glob('../pages/teas/*.md');
 const title = "Чайна Хатинка | Про наші чаї";
 ---
 

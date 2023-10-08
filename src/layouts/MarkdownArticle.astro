@@ -1,0 +1,19 @@
+---
+import Main from "../layouts/Main.astro";
+
+const { frontmatter } = Astro.props;
+---
+<Main>
+    <main>
+        <h1>{frontmatter.title}</h1>
+        <h4>Автор: {frontmatter.author}</h4>
+        <h5>Published on: {frontmatter.pubDate.slice(0,10)}</h5>
+        <slot />
+    </main>
+</Main>
+
+<style>
+    p {
+        text-indent: 2rem;
+    }
+</style>

@@ -1,15 +1,19 @@
 {
-  "name": "teahut-astro",
+  "name": "",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^3.2.3"
+    "@astrojs/check": "^0.3.0",
+    "@astrojs/mdx": "^1.1.3",
+    "astro": "^3.4.0",
+    "astro-icon": "^0.8.1",
+    "typescript": "^5.2.2"
   }
 }

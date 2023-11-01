@@ -1,0 +1,19 @@
+---
+interface Props {
+	pageTitle: string;
+	description?: string;
+	image?: string;
+}
+
+const { pageTitle = "Чайна Хатинка", description = "Чай, Ча Дао, чайна традиція, майстерність і чайна церемонія ґонфу ча, чайна кульрура й чайний етикет — у всі ці теми Чайна Хатинка глибоко занурюється на своїх сторінках.", image } = Astro.props;
+---
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta property="og:image" content={image} />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <title>{pageTitle}</title>
+</head>

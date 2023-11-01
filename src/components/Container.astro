@@ -1,0 +1,20 @@
+---
+interface Props {
+  containerMaxWidth: string;
+}
+
+const {containerMaxWidth} = Astro.props as Props;
+---
+
+<div class="container">
+    <slot />
+</div>
+
+<style define:vars={{ containerMaxWidth }}>
+    .container {
+      width: 100%;
+      max-width: var(--containerMaxWidth);
+      margin: 0 auto;
+      padding: var(--container-padding, 1rem);
+    }
+</style>

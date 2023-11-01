@@ -1,0 +1,36 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Navigation from '../components/Navigation.astro';
+import Container from '../components/Container.astro';
+import '../styles/global.css';
+
+const { pageTitle, containerMaxWidth } = Astro.props;
+---
+
+<html lang="uk">
+	<BaseHead {pageTitle}/>
+	<body>
+		<header>
+			<Navigation {containerMaxWidth} />
+		</header>
+            <main class="content">
+                <slot />
+            </main>
+		<Footer {containerMaxWidth} />
+	</body>
+</html>
+
+<style>
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    .content {
+        flex: 1;
+    }
+    footer {
+        flex-shrink: 0;
+    }
+</style>

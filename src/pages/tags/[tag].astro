@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogPost from '../../components/BlogPost.astro';
+
+export async function getStaticPaths() {
+    const allTeas = await Astro.glob('../teas/*.md');
+
+    const uniqueTags = [...new Set(allTeas.map((tea) => tea.frontmatter.tags).flat())];
+
+    return uniqueTags.map((tag) => {
+        const filteredTeas = allTeas.filter((tea) => tea.frontmatter.tags.includes(tag));
+        return {
+            params: { tag },
+            props: { teas: filteredTeas },
+        };
+    });
+}
+
+const { tag } = Astro.params;
+const { teas } = Astro.props;
+const containerMaxWidth = "900px";
+
+---
+<BaseLayout pageTitle={tag} {containerMaxWidth}>
+  <p>Чаї за маркуванням {tag}</p>
+  <ul>
+    {teas.map((tea) => 
+        <BlogPost 
+            url={tea.url} 
+            title={tea.frontmatter.title}
+            image={tea.frontmatter.image} 
+            pubDate={tea.frontmatter.pubDate}
+        />)}
+  </ul>
+</BaseLayout>

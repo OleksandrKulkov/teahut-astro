@@ -1,18 +1,21 @@
 ---
-import Container from "../components/Container.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogPost from '../components/BlogPost.astro';
 
+const allPosts = await Astro.glob('../pages/teas/*.md');
 const pageTitle = "Наші чаї";
 const containerMaxWidth = "900px";
 ---
 
-<BaseLayout {pageTitle} >
-	<Container {containerMaxWidth}>
-	<h1>{pageTitle}</h1>
+<BaseLayout {pageTitle} {containerMaxWidth}>
+    <h1>{pageTitle}</h1>
     <ul>
-        <li><a href="/teas/2005-liubao/">"Лісовий чай із Ґвансі"</a></li>
-        <li><a href="/teas/2017-ailao-dianhong-cake/">Млинець Дяньхона з Айлао</a></li>
-        <li><a href="/teas/2021-ailao-sheng/">"Поза хмарами"</a></li>
+        {allPosts.map((tea) => 
+        <BlogPost 
+            url={tea.url} 
+            title={tea.frontmatter.title} 
+            image={tea.frontmatter.image} 
+            pubDate={tea.frontmatter.pubDate}
+        />)}
     </ul>
-	</Container>
 </BaseLayout>

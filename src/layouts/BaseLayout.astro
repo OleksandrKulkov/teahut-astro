@@ -14,9 +14,11 @@ const { pageTitle, containerMaxWidth } = Astro.props;
 		<header>
 			<Navigation {containerMaxWidth} />
 		</header>
+        <Container {containerMaxWidth}>
             <main class="content">
                 <slot />
             </main>
+        </Container>
 		<Footer {containerMaxWidth} />
 	</body>
 </html>

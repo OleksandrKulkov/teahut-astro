@@ -1,6 +1,7 @@
 ---
 import Container from './Container.astro';
 import Logo from './Logo.astro';
+import ThemeIcon from './ThemeIcon.astro';
 
 const containerMaxWidth = "920px";
 ---
@@ -13,6 +14,9 @@ const containerMaxWidth = "920px";
         <a class="home-link link" href="/">Хатинка</a>
         <a class="teas-link link" href="/teas/">Наші чаї</a>
         <a class="library-link link" href="/library/">Читальня</a>
+        <div class="toggle-btn link">
+            <ThemeIcon />
+        </div>
         <label class="hamburger-menu">
             <input type="checkbox" />           
         </label>
@@ -41,7 +45,8 @@ const containerMaxWidth = "920px";
         grid-template-areas: 
         "logo link1 hamburger"
         ". link2 ."
-        ". link3 .";
+        ". link3 ."
+        ". toggle .";
         align-items: center;
         justify-items: center;
         transition: opacity var(--animation-timing), width var(--animation-timing),
@@ -84,10 +89,16 @@ const containerMaxWidth = "920px";
         grid-area: link3;
     }
 
+    .toggle-btn {
+        grid-area: toggle;
+    }
+
     .link:hover,
     .link:active {
-        background-color: var(--foreground);
+        /* background-color: var(--foreground);
         color: var(--background);
+        fill: var(--background); */
+        transform: scale(1.1);
     }
 
     .navigation:has(input:checked) {
@@ -171,9 +182,9 @@ const containerMaxWidth = "920px";
         }
 
         .navigation {
-            grid-template-columns: 56px 3% repeat(3, auto) 35%;
+            grid-template-columns: 56px 3% repeat(3, auto) 35% 56px;
             grid-template-areas:
-            "logo . link1 link2 link3 .";
+            "logo . link1 link2 link3 . toggle";
         }
 
         .link {

@@ -1,0 +1,52 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import { formatDate } from "../utils/helpers.js";
+
+const { frontmatter } = Astro.props;
+const containerMaxWidth = "900px";
+---
+
+<BaseLayout pageTitle={frontmatter.title} {containerMaxWidth}>
+    <div class="image">
+        <img class="tea-image" src={frontmatter.image} alt={frontmatter.title} />
+    </div>
+    <h1>{frontmatter.title}</h1>
+    <h3>{frontmatter.description}</h3>
+    <p class="header-date">Додано: {formatDate(frontmatter.pubDate)}</p>
+    <div class="tags">
+        {frontmatter.tags.map((tag) => (
+          <p class="tag"><a class="tag-link" href={`/tags/${tag}`}>{tag}</a></p>
+        ))}
+    </div>
+    <slot />
+</BaseLayout>
+
+<style>
+    .tag-link {
+      color: var(--choco);
+    }
+
+    .header-date {
+        font-style: italic;
+        margin: 1rem 0 2rem;
+    }
+
+    .tea-image {
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .tag {
+        margin: 0.25em;
+        border: dotted 1px #a1a1a1;
+        border-radius: .5em;
+        padding: .5em 1em;
+        font-size: 1.15em;
+        background-color: #F8FCFD;
+    }
+</style>

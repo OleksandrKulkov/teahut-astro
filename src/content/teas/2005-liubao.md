@@ -1,11 +1,10 @@
 ---
-layout: ../../layouts/MarkdownTeasLayout.astro
 title: '"Лісовий чай із Ґвансі"'
 subtitle: Любао 2005 року з Вуджов
 description: Любао 2005 року з листя диких дерев із Вуджов, Ґвансі.
 pubDate: 2023-09-07
-image: /src/content/teasImages/2005-Liubao/2005-Liubao.webp
-# category: "Чорні чаї"
+image: /src/content/teas/images/2005-Liubao/2005-Liubao.webp
+category: ["Чорні чаї"]
 tags: ["Хейча", "Витримані чаї"]
 ---
 

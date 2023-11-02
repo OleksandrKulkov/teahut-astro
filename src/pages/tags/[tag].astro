@@ -1,14 +1,15 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogPost from '../../components/BlogPost.astro';
 
 export async function getStaticPaths() {
-    const allTeas = await Astro.glob('../teas/*.md');
+    const allTeas = await getCollection("teas");
 
-    const uniqueTags = [...new Set(allTeas.map((tea) => tea.frontmatter.tags).flat())];
+    const uniqueTags = [...new Set(allTeas.map((tea) => tea.data.tags).flat())];
 
     return uniqueTags.map((tag) => {
-        const filteredTeas = allTeas.filter((tea) => tea.frontmatter.tags.includes(tag));
+        const filteredTeas = allTeas.filter((tea) => tea.data.tags.includes(tag));
         return {
             params: { tag },
             props: { teas: filteredTeas },
@@ -26,10 +27,10 @@ const containerMaxWidth = "900px";
   <ul>
     {teas.map((tea) => 
         <BlogPost 
-            url={tea.url} 
-            title={tea.frontmatter.title}
-            image={tea.frontmatter.image} 
-            pubDate={tea.frontmatter.pubDate}
+            url={`/teas/${tea.slug}/`}
+            title={tea.data.title}
+            image={tea.data.image} 
+            pubDate={tea.data.pubDate}
         />)}
   </ul>
 </BaseLayout>

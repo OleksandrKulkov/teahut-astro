@@ -1,11 +1,10 @@
 ---
-layout: ../../layouts/MarkdownTeasLayout.astro
 title: Млинець Дяньхона з Айлао
 subtitle: Юньнань, Китай; весна 2017 року
 pubDate: 2023-09-07
 description: Гори Айлао; весна 2017 року.
-image: /src/content/teasImages/2017-ailao-dianhong-cake/2017-ailao-dianhong-cake-1.jpg
-# category: "Червоні чаї"
+image: /src/content/teas/images/2017-ailao-dianhong-cake/2017-ailao-dianhong-cake-1.jpg
+category: ["Червоні чаї"]
 tags: ["Червоні чаї", "Дяньхони", "Чаї з дерев"]
 ---
 

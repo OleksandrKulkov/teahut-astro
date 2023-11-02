@@ -1,8 +1,9 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const allTeas = await Astro.glob('../teas/*.md');
-const tags = [...new Set(allTeas.map((tea) => tea.frontmatter.tags).flat())];
+const allTeas = await getCollection("teas");
+const tags = [...new Set(allTeas.map((tea) => tea.data.tags).flat())];
 const pageTitle = "Покажчик міток";
 const containerMaxWidth = "900px";
 

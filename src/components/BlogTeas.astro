@@ -1,16 +1,20 @@
 ---
 import { formatDate } from "../utils/helpers.js";
 
-const { title, description, url, pubDate } = Astro.props;
+const { title, subtitle, url, pubDate, image } = Astro.props;
 ---
 
 <a class="post-preview__link" href={url}>
-    <article class="post-preview__article">     
+    <article class="post-preview__article">
+      <picture>
+        <source srcset={`${image}.webp`} type="image/webp">
+        <img class="post-preview__img" src={`${image}.png`} alt={`Featured image for ${title}`} >
+      </picture>      
       <div class="post-preview__text">
-        <h2 class="post-title">{title}</h2>
-        <h5>{description}</h5>
-        <time class="post-preview__date">Опубліковано: {formatDate(pubDate)}</time>
-        <!-- {post.data?.category && <p class="post-preview__category">{post.data.category}</p>} -->
+        <h2>{title}</h2>
+        <h4>{subtitle}</h4>
+        <time class="post-preview__date">Додано: {formatDate(pubDate)}</time>
+        <!-- {post.frontmatter?.category && <p class="post-preview__category">{post.frontmatter.category}</p>} -->
       </div>
     </article>
 </a>
@@ -18,6 +22,9 @@ const { title, description, url, pubDate } = Astro.props;
 <style>
     .post-preview__link {
       text-decoration: none;
+    }
+    .post-preview__picture {
+        /* margin: 0 1rem 1rem 0; */
     }
     .post-preview__img {
       border: 1px solid grey;
@@ -29,14 +36,9 @@ const { title, description, url, pubDate } = Astro.props;
     .post-preview__link:hover .post-preview__text {
       transform: translateX(1rem);
     }
-    .post-preview__article:not(:first-child) {
+    .post-preview__article {
       display: grid;
-      grid-template-columns: 1fr;
-      align-items: start;
-    }
-    .post-preview__article:first-child {
-      display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1.5fr;
       align-items: start;
     }
     .post-preview__text {

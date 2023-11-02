@@ -1,7 +1,7 @@
 ---
 import Container from "./Container.astro";
 import SocialList from './SocialList.astro';
-const containerMaxWidth = "900px"
+const containerMaxWidth = "850px"
 ---
 
 <footer>
@@ -35,11 +35,17 @@ const containerMaxWidth = "900px"
   footer {
     position: relative;
     min-height: 200px;
-    background-color: var(--theme-footer-background);
-    color: var(--theme-on-footer-background);
+    background-color: #362e12;
+    color: #f2e9bf;
+  }
+  strong a {
+    color: var(--yellow-3);
+  }
+  a {
+    color: #f2e9bf;
   }
   .footer-links__grid {
-    padding: 10vh 0;
+    padding: 5vh 0 10vh;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
@@ -54,6 +60,7 @@ const containerMaxWidth = "900px"
   }
   .footer-links__grid ul li strong {
     font-weight: 900;
+    color: #f2e9bf;
   }
   .footer-bottom__container {
     position: relative;
@@ -64,17 +71,6 @@ const containerMaxWidth = "900px"
     align-items: center;
     font-size: var(--step--2);
   }
-
-  [astro-icon] {
-        color: blue;
-        /* OR */
-        fill: blue;
-    }
-    [astro-icon="annotation"] {
-        color: red;
-        /* OR */
-        fill: red;
-    }
 
   @media(max-width: 636px) {
     .footer-links__grid {
@@ -88,7 +84,7 @@ const containerMaxWidth = "900px"
     }
     .footer-bottom__container {
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       gap: 1rem;
     }
   }

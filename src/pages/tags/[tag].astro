@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import BlogPost from '../../components/BlogPost.astro';
+import BlogTeas from "../../components/BlogTeas.astro";
 
 export async function getStaticPaths() {
     const allTeas = await getCollection("teas");
@@ -26,7 +26,7 @@ const containerMaxWidth = "900px";
   <p>Чаї за маркуванням {tag}</p>
   <ul>
     {teas.map((tea) => 
-        <BlogPost 
+        <BlogTeas 
             url={`/teas/${tea.slug}/`}
             title={tea.data.title}
             image={tea.data.image} 

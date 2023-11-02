@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import BlogPost from '../components/BlogPost.astro';
+import BlogTeas from '../components/BlogTeas.astro';
 
 const allTeas = await getCollection("teas");
 const pageTitle = "Наші чаї";
@@ -12,7 +12,7 @@ const containerMaxWidth = "900px";
     <h1>{pageTitle}</h1>
     <ul>
         {allTeas.map((tea) => 
-        <BlogPost 
+        <BlogTeas 
             url={`/teas/${tea.slug}/`}
             title={tea.data.title}
             image={tea.data.image}

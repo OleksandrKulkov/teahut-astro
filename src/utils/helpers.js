@@ -29,3 +29,8 @@ export function generateCategoryData(categories) {
   });
   return categoryData;
 }
+
+export function exchangePrice(price) {
+  const coursePrice = 39 * price;
+ return coursePrice;
+}

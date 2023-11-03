@@ -11,15 +11,17 @@ const { pageTitle, containerMaxWidth } = Astro.props;
 <html lang="uk">
 	<BaseHead {pageTitle}/>
 	<body>
-		<header>
-			<Navigation {containerMaxWidth} />
-		</header>
-        <Container {containerMaxWidth}>
-            <main class="content">
-                <slot />
-            </main>
-        </Container>
-		<Footer {containerMaxWidth} />
+        <div class="wrapper">
+            <header>
+                <Navigation {containerMaxWidth} />
+            </header>
+            <Container {containerMaxWidth}>
+                <main class="content">
+                    <slot />
+                </main>
+            </Container>
+            <Footer {containerMaxWidth} />
+        </div>
 	</body>
 </html>
 

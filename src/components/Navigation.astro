@@ -3,7 +3,7 @@ import Container from './Container.astro';
 import Logo from './Logo.astro';
 import ThemeIcon from './ThemeIcon.astro';
 
-const containerMaxWidth = "930px";
+const containerMaxWidth = "99%";
 ---
 
 <Container {containerMaxWidth}>
@@ -192,5 +192,9 @@ const containerMaxWidth = "930px";
             padding: 0;
             color: var(--background);
         }
+    }
+
+    @media screen and (min-width: 1024px) {
+
     }
 </style>

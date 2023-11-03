@@ -1,7 +1,7 @@
 ---
-import { formatDate } from "../utils/helpers.js";
+import { formatDate, exchangePrice } from "../utils/helpers.js";
 
-const { title, subtitle, url, pubDate, image } = Astro.props;
+const { title, subtitle, url, pubDate, price, image } = Astro.props;
 ---
 
 <a class="post-preview__link" href={url}>
@@ -14,6 +14,7 @@ const { title, subtitle, url, pubDate, image } = Astro.props;
         <h2>{title}</h2>
         <h4>{subtitle}</h4>
         <time class="post-preview__date">Додано: {formatDate(pubDate)}</time>
+        <div class="post-preview__price">Вартість за 10гр: {exchangePrice(price).toFixed()} грн</div>
         <!-- {post.frontmatter?.category && <p class="post-preview__category">{post.frontmatter.category}</p>} -->
       </div>
     </article>

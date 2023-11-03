@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
-import { formatDate } from "../utils/helpers.js";
+import { formatDate, exchangePrice } from "../utils/helpers.js";
 
 const { frontmatter } = Astro.props;
 const containerMaxWidth = "900px";
@@ -13,6 +13,7 @@ const containerMaxWidth = "900px";
     <h1>{frontmatter.title}</h1>
     <h3>{frontmatter.description}</h3>
     <p class="header-date">Додано: {formatDate(frontmatter.pubDate)}</p>
+    <p class="header-price">Вартість за 10 гр: {exchangePrice(frontmatter.price).toFixed()} грн</p>
     <div class="tags">
         {frontmatter.tags.map((tag: unknown) => (
           <p class="tag"><a class="tag-link" href={`/tags/${tag}`}>{tag}</a></p>

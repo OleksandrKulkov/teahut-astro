@@ -5,7 +5,7 @@ import BlogTeas from '../components/BlogTeas.astro';
 
 const allTeas = await getCollection("teas");
 const pageTitle = "Наші чаї";
-const containerMaxWidth = "900px";
+const containerMaxWidth = "90%";
 ---
 
 <BaseLayout {pageTitle} {containerMaxWidth}>
@@ -17,6 +17,7 @@ const containerMaxWidth = "900px";
             title={tea.data.title}
             image={tea.data.image}
             pubDate={tea.data.pubDate}
+            price={tea.data.price}
         />)}
     </ul>
 </BaseLayout>

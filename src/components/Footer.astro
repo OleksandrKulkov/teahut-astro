@@ -1,7 +1,7 @@
 ---
 import Container from "./Container.astro";
 import SocialList from './SocialList.astro';
-const containerMaxWidth = "850px"
+const containerMaxWidth = "90%"
 ---
 
 <footer>
@@ -87,5 +87,12 @@ const containerMaxWidth = "850px"
       align-items: center;
       gap: 1rem;
     }
+  }
+
+  @media screen and (min-width: 1024px) {
+    footer {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
   }
 </style>

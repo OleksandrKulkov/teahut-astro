@@ -7,6 +7,7 @@ const teasCollection = defineCollection({
       subtitle: z.string().optional(),
       description: z.string(),
       pubDate: z.date(),
+      price: z.number(),
       image: z.string(),
       category: z.array(z.string()).optional(),
       tags: z.array(z.string())

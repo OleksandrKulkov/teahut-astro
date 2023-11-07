@@ -4,7 +4,7 @@ subtitle: Юньнань, Китай; весна 2017 року
 pubDate: 2023-09-07
 price: 2.8
 description: Гори Айлао; весна 2017 року.
-image: /src/content/teas/images/2017-ailao-dianhong-cake/2017-ailao-dianhong-cake-1.jpg
+image: "/src/content/teas/images/2017-ailao-dianhong-cake/2017-ailao-dianhong-cake-1.jpg"
 category: ["Червоні чаї"]
 tags: ["Червоні чаї", "Дяньхони", "Чаї з дерев"]
 ---

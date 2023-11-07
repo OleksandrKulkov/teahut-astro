@@ -15,7 +15,7 @@ const containerMaxWidth = "900px";
     <h1>{frontmatter.title}</h1>
     <h3>{frontmatter.description}</h3>
     <p class="header-date">Додано: {formatDate(frontmatter.pubDate)}</p>
-    <p class="header-price">Орієнтовна вартість за 10 гр: {exchangePrice(frontmatter.price).toFixed()} грн</p>
+    <p class="header-price">Орієнтовна вартість: {exchangePrice(frontmatter.price).toFixed()} грн за 10 гр</p>
     <div class="tags">
         {frontmatter.tags.map((tag: unknown) => (
           <p class="tag"><a class="tag-link" href={`/tags/${tag}`}>{tag}</a></p>

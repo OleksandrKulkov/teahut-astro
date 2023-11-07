@@ -1,15 +1,17 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 import { formatDate, exchangePrice } from "../utils/helpers.js";
+import ImageGallery from "../components/ImageGallery.astro";
 
 const { frontmatter } = Astro.props;
 const containerMaxWidth = "900px";
 ---
 
 <BaseLayout pageTitle={frontmatter.title} {containerMaxWidth}>
-    <div class="image">
+    <!-- <div class="image">
         <img class="tea-image" src={frontmatter.image} alt={frontmatter.title} />
-    </div>
+    </div> -->
+    <ImageGallery />
     <h1>{frontmatter.title}</h1>
     <h3>{frontmatter.description}</h3>
     <p class="header-date">Додано: {formatDate(frontmatter.pubDate)}</p>

@@ -1,0 +1,87 @@
+---
+import { Image } from "astro:assets";
+
+const image1 = "/src/content/teas/images/2005-liubao/2005-liubao.webp"
+const image2 = "/src/content/teas/images/2005-liubao/2005-liubao-1.jpg"
+const image3 = "/src/content/teas/images/2005-liubao/2005-liubao-2.jpg"
+const image4 = "/src/content/teas/images/2005-liubao/2005-liubao-3.jpg"
+---
+
+<div class="gallery">
+    <input type="radio" checked="checked" name="select" id="img-tab-1">
+    <label for="img-tab-1" style="background-image: url(/src/content/teas/images/2005-liubao/2005-liubao.webp);"></label>
+    <img src={image1} />
+  
+    <input type="radio" name="select" id="img-tab-2">
+    <label for="img-tab-2" style="background-image: url(/src/content/teas/images/2005-liubao/2005-liubao-1.jpg);"></label>
+    <img src={image2} />
+  
+    <input type="radio" name="select" id="img-tab-3">
+    <label for="img-tab-3" style="background-image: url(/src/content/teas/images/2005-liubao/2005-liubao-2.jpg);"></label>
+    <img src={image3} />
+    
+    <input type="radio" name="select" id="img-tab-4">
+    <label for="img-tab-4" style="background-image: url(/src/content/teas/images/2005-liubao/2005-liubao-3.jpg);"></label>
+    <img src={image4} />
+  </div>
+
+<style>
+   .gallery {
+  display: grid;
+  grid-template-rows: repeat(4 1fr);
+  grid-gap: 5px;
+  grid-row-start: 1;
+  grid-column: 1 / 3;
+  align-content: start;
+  max-width: 80vh;
+  margin: 0 auto;
+  transition: all 200ms linear;
+}
+
+.gallery input[type="radio"] {
+  display: none;
+}
+
+.gallery label {
+  position: relative;
+  display: block;
+  padding-bottom: 60%;
+  margin: 5px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.gallery label:before {
+  border: 1px solid #e3e3e3;
+  content: '';
+  position: absolute;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  top: -5px;
+}
+
+img {
+    border: 0;
+}
+
+.gallery img {
+  display: none;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  width: 100%;
+  transition: all 150ms linear;
+}
+
+.gallery input[name="select"]:checked + label + img {
+  display: block;
+}
+
+.gallery input[name="select"]:checked + label:before {
+  border: 1px solid #000;
+}
+</style>

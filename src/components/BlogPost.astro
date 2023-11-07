@@ -8,14 +8,21 @@ const { title, description, url, pubDate } = Astro.props;
     <article class="post-preview__article">     
       <div class="post-preview__text">
         <h2 class="post-title">{title}</h2>
-        <h5>{description}</h5>
         <time class="post-preview__date">Опубліковано: {formatDate(pubDate)}</time>
+        <p class="post-preview__description">{description}</p>
         <!-- {post.data?.category && <p class="post-preview__category">{post.data.category}</p>} -->
       </div>
     </article>
 </a>
 
 <style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+    .post-preview__link:nth-child(1) {
+      grid-column: 1 / -1;
+    }
     .post-preview__link {
       text-decoration: none;
     }
@@ -28,16 +35,6 @@ const { title, description, url, pubDate } = Astro.props;
     }
     .post-preview__link:hover .post-preview__text {
       transform: translateX(1rem);
-    }
-    .post-preview__article:not(:first-child) {
-      display: grid;
-      grid-template-columns: 1fr;
-      align-items: start;
-    }
-    .post-preview__article:first-child {
-      display: grid;
-      grid-template-columns: 1fr;
-      align-items: start;
     }
     .post-preview__text {
       transition: transform 0.2s ease-in-out;

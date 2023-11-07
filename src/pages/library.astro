@@ -10,10 +10,11 @@ const containerMaxWidth = "90%";
 
 <BaseLayout {pageTitle} {containerMaxWidth}>
     <h1>{pageTitle}</h1>
-	<ul>
+	<ul class="posts-preview">
         {
             allPosts.map((post) => (
                 <BlogPost
+                    class="post"
                     url={`/library/${post.slug}/`}
                     title={post.data.title}
                     description={post.data.description}
@@ -23,3 +24,23 @@ const containerMaxWidth = "90%";
           }
     </ul>
 </BaseLayout>
+
+<style>
+    .posts-preview {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 3rem;
+        padding: 0;
+    }
+
+    @media screen and (min-width: 768px) {
+        .posts-preview {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem 1rem;
+        }
+        .post-preview > .posts-preview__link:nth-child(1) {
+            grid-column-start: 1;
+            grid-column-end: -1;
+        }
+    }
+</style>

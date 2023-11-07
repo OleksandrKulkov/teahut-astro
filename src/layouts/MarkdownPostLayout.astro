@@ -9,7 +9,7 @@ const containerMaxWidth = "900px";
 <BaseLayout pageTitle={frontmatter.title} {containerMaxWidth}>
     <h1 class="header-title">{frontmatter.title}</h1>
     <h4 class="header-author">{frontmatter.author}</h4>
-    <p class="header-date">Додано: {formatDate(frontmatter.pubDate)}</p>
+    <p class="header-date">Опубліковано: {formatDate(frontmatter.pubDate)}</p>
     <slot />
 </BaseLayout>
 
@@ -29,6 +29,7 @@ const containerMaxWidth = "900px";
     .header-date {
         font-style: italic;
         margin: 1rem 0 2rem;
+        text-align: end;
     }
 
     .tea-image {

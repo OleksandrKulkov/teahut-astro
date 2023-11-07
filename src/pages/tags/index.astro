@@ -10,11 +10,11 @@ const containerMaxWidth = "900px";
 ---
 
 <BaseLayout {pageTitle} {containerMaxWidth}>
-    <div class="tags">
+    <ul class="tags">
         {tags.map((tag) => (
           <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
         ))}
-    </div>
+    </ul>
 </BaseLayout>
 
 <style>

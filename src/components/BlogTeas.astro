@@ -16,7 +16,7 @@ const { title, subtitle, url, price, image } = Astro.props;
         <div class="post-preview__price">
           <div class="post-preview__price-text">Орієнтовна вартість:</div>
           <div class="post-preview__price-price">
-            {exchangePrice(price).toFixed()} грн  за 10гр
+            <span class="price">{exchangePrice(price).toFixed()} грн </span>за 10гр
           </div>
         </div>
         <!-- {post.frontmatter?.category && <p class="post-preview__category">{post.frontmatter.category}</p>} -->
@@ -64,6 +64,9 @@ const { title, subtitle, url, price, image } = Astro.props;
     }
     .post-preview__price-price {
       font-weight: 700;
+    }
+    .price {
+      color: rgb(180, 1, 1);
     }
     .post-preview__category {
       width: fit-content;

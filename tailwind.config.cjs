@@ -52,6 +52,7 @@ module.exports = {
 
 				yellow: {
 					3: 'rgb(255 224 102 / <alpha-value>)',
+					5: 'rgb(252 196 25 / <alpha-value>)',
 				},
 			},
 			backgroundImage: {

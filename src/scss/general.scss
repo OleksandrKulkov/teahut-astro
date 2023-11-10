@@ -1,0 +1,8 @@
+:root {
+  .prose {
+    @apply max-w-none;
+    & * {
+      @apply text-gray-1;
+    }
+  }
+}

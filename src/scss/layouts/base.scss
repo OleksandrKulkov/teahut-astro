@@ -12,7 +12,7 @@
 
 	body {
     //base styles
-		@apply py-4 mx-auto max-w-5xl dark:bg-choco bg-white text-neutral-900 dark:text-white bg-background;
+		@apply h-auto py-4 mx-auto max-w-5xl dark:bg-choco bg-white text-neutral-900 dark:text-white bg-background;
 
 		// scroll blocked
 		.lock & {

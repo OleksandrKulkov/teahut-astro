@@ -1,0 +1,40 @@
+@layer base {
+
+  html {
+    visibility: hidden;
+    // scrollbar-gutter: stable both-edges;
+  }
+
+	html,
+	body {
+		@apply h-full;
+	}
+
+	body {
+    //base styles
+		@apply py-4 mx-auto max-w-5xl dark:bg-choco bg-white text-neutral-900 dark:text-white bg-background;
+
+		// scroll blocked
+		.lock & {
+      @apply overflow-hidden overscroll-none touch-none;
+		}
+		// site loaded
+		.loaded & {
+		}
+	}
+
+	.wrapper {
+    @apply flex flex-col min-h-full overflow-hidden rounded-2xl dark:bg-surface bg-[#f2e9bf];
+		@supports (overflow: clip) {
+			overflow: clip;
+		}
+		// pin the footer
+		> main {
+      @apply flex-auto;
+		}
+		// fix for sliders
+		> * {
+      @apply min-w-0;
+		}
+	}
+}

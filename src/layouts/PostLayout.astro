@@ -1,0 +1,51 @@
+---
+import Layout from '@layouts/MainLayout.astro';
+import Header from '@partials/HeaderMain.astro';
+import Footer from '@partials/FooterMain.astro';
+
+import { formatDate } from '@utils';
+
+const { frontmatter } = Astro.props;
+
+const { title, description, pubDate } = frontmatter;
+const formattedDate = formatDate(pubDate)
+---
+
+<Layout {title} {description}>
+	<Header />
+
+	<main>
+		<section class='py-20'>
+			<div class='container'>
+				<article class='xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700'>
+					<header class='xl:pb-6 pt-6'>
+						<div class='space-y-1 text-center'>
+							<dl class='space-y-10'>
+								<div>
+									<dt class='sr-only'>Дата публікації</dt><dd
+										class='text-base font-medium leading-6 text-gray-500 dark:text-gray-400'>
+										<time datetime={pubDate}
+											>{formattedDate}</time
+										>
+									</dd>
+								</div>
+							</dl><div>
+								<h1
+									class='sm:text-4xl sm:leading-10 md:text-5xl md:leading-14 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100'>{title}</h1>
+							</div>
+						</div>
+					</header>
+
+					<div
+						class='xl:col-span-3 xl:row-span-2 xl:pb-0 divide-y divide-gray-200 dark:divide-gray-700'>
+						<div class='prose dark:prose-invert max-w-none pb-8 pt-10'>
+							<slot />
+						</div>
+					</div>
+				</article>
+			</div>
+		</section>
+	</main>
+
+	<Footer />
+</Layout>

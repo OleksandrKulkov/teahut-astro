@@ -1,0 +1,12 @@
+//===================== Tailwind =====================//
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+//tailwind extend
+@import './layouts/base';
+@import './layouts/components';
+@import './layouts/utilities';
+
+//===================== Components =====================//
+@import './components/accordion';

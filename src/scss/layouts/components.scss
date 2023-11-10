@@ -1,0 +1,73 @@
+@layer components {
+	//===================== Form Field =====================//
+	[form-field] {
+		@apply flex flex-col gap-2;
+
+		& [input-wrapper] {
+			@apply relative;
+		}
+
+		:is(input, textarea) {
+			@apply w-full resize-none rounded-md border border-solid border-neutral-600 px-4 py-2 leading-none shadow-sm focus-visible:shadow-white;
+
+			&[aria-invalid='true'] {
+				@apply border-red-600 text-red-600 placeholder:text-red-600;
+
+				& ~ [data-error] {
+					@apply block;
+				}
+
+        & ~ [data-type-toggle] {
+          @apply text-red-600;
+        }
+			}
+
+			&[aria-invalid='false'][aria-current='false'] {
+				@apply border-green-600 text-green-600 placeholder:text-green-600;
+
+				& ~ [data-success] {
+					@apply block;
+				}
+
+        & ~ [data-type-toggle] {
+          @apply text-green-600;
+        }
+			}
+
+      // &[aria-current='true'] {
+      //   @apply bg-orange-600;
+      // }
+		}
+
+		& small {
+			@apply absolute -bottom-5 left-0 text-xs/none font-medium;
+
+			&[data-error] {
+				@apply text-red-600;
+			}
+
+			&[data-success] {
+				@apply text-green-600;
+			}
+		}
+
+		& svg[data-error], & svg[data-success] {
+			@apply absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2;
+
+			&[data-error] {
+				@apply text-red-600;
+			}
+
+			&[data-success] {
+				@apply text-green-600;
+			}
+		}
+
+    & [data-type-toggle] {
+      @apply absolute right-4 top-1/2 -translate-y-1/2;
+      svg {
+        @apply h-5 w-5 select-none  pointer-events-none text-inherit;
+      }
+    }
+	}
+}

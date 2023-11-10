@@ -1,0 +1,36 @@
+---
+import logo from '../../public/logo.png';
+
+import { Image } from 'astro:assets';
+---
+
+<nav>
+	<ul class='flex items-center space-x-16'>
+		<li>
+			<a
+				aria-label='Логотип Чайної Хатинки'
+				class='bg-orange block h-14 w-14 rounded-2xl'
+				href='/'>
+				<Image src={logo} class='p-[0.45rem]' alt='Логотип' />
+			</a>
+			<li>
+				<a
+					class='font-medium text-gray-900 dark:text-gray-100 uppercase'
+					href='/about'>Хатинка</a
+				>
+			</li>
+			<li>
+				<a
+					class='font-medium text-gray-900 dark:text-gray-100 uppercase'
+					href='/about'>Наші чаї</a
+				>
+			</li>
+			<li>
+				<a
+					class='font-medium text-gray-900 dark:text-gray-100 uppercase'
+					href='/about'>Читальня</a
+				>
+			</li>
+		</li>
+	</ul>
+</nav>

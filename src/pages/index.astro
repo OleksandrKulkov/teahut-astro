@@ -1,30 +1,35 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import Layout from '@layouts/MainLayout.astro';
+import Header from '@partials/HeaderMain.astro';
+import Footer from '@partials/FooterMain.astro';
 
-const pageTitle = "Чайна Хатинка";
-const containerMaxWidth = "90%";
+import Post from '@partials/Post.astro';
+
+const allPosts = await Astro.glob('./posts/*.md');
 ---
 
-<BaseLayout {pageTitle} {containerMaxWidth}>
-    <h1>{pageTitle}</h1>
-		<h3>"Хатинка Чайного Мудреця"</br>вітає вас!</h3>
-        <p>
-            Кожен із нас шукає своєї досконалости так, як він її розуміє, залежно від того знання і контексту, який він чи вона отримали за своє життя, та від того, що в нього закладено Природою...
-        </p>
-        <p>
-            Ми, як і багато хто до нас, шукаємо Довершености у своєму житті через Чай – через ту Традицію, підвалини якої було закладено дуже давно. Ми не намагаємося відкрити щось нове, досі невідоме. Навпаки, за допомогою простих метод ми глибше занурюємось у навколишнє, у те, що маємо саме цієї миті. Якщо Надзвичайне й існує, воно мусить бути тут і зараз...
-        </p>
-        <p>
-            Наш Шлях до Досконалости, Шлях Чаю ("Ча Дао", "Тя До", як його називають на Сході), пов'язаний зі звичним для людини процесом пиття – приготуванням і вживанням однієї з найдавніше відомих лікарських рослин у Світі. Мета цього – найкраща чашка чаю, що містить у собі Пробудження і Присутність для кожного з нас. Перед Природою і перед Чаєм, Її часточкою, ми всі рівні. Як то кажуть: "Стара хвіртка до Мудрости завжди відкрита. Дзен не має дверей..."
-        </p>
-</BaseLayout>
+<Layout title='divDevSpace' description='Блог створенний для того, щоб ділитись з вами своїми знаннями та досвідом'>
+	<Header />
 
-<style>
-    h3 {
-        margin-bottom: 2rem;
-    }
-    
-    p {
-        margin-bottom: 1rem;
-    }
-</style>
+	<main>
+		<section>
+			<div class='container'>
+				<div class='md:space-y-5 space-y-2 pb-8 pt-6'>
+					<h1
+						class='md:text-4xl md:leading-10 lg:text-6xl md:leading-14 text-3xl leading-9 tracking-tight text-gray-900 dark:text-gray-100 font-Rubik'>
+						Блог
+					</h1>
+					<p class='text-lg leading-7 text-gray-500 dark:text-gray-400'>
+						Створенний для того, щоб ділитись з вами своїми знаннями та досвідом.
+					</p>
+				</div>
+
+				<ul class='divide-y divide-gray-200 dark:divide-gray-700'>
+					{allPosts.map((post) => <Post post={post} />)}
+				</ul>
+			</div>
+		</section>
+	</main>
+
+	<Footer />
+</Layout>

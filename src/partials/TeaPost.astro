@@ -1,4 +1,5 @@
 ---
+import { exchangePrice } from '@utils';
 import { Image } from 'astro:assets';
 
 const { props } = Astro.props;
@@ -29,7 +30,7 @@ const { props } = Astro.props;
 				Орієнтовна вартість:
 				<span class='font-bold'>
 					<strong class='!text-yellow-500'>
-						{props.data.price} грн{' '}
+						{exchangePrice(props.data.price).toFixed()} грн{' '}
 					</strong>
 					 за 10гр
 				</span>

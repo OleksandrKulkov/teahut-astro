@@ -5,7 +5,7 @@ import Footer from '@partials/FooterMain.astro';
 
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
-import { formatDate } from '@utils';
+import { formatDate } from '@js/base/utils';
 
 export async function getStaticPaths() {
 	const blogEntries = await getCollection('teas');

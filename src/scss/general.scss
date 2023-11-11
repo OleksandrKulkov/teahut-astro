@@ -4,5 +4,8 @@
     & * {
       @apply text-gray-1;
     }
+    a {
+      @apply text-yellow-3 hover:text-yellow-5 transition-colors;
+    }
   }
 }

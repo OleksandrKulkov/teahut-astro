@@ -1,0 +1,35 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Layout from '@layouts/MainLayout.astro';
+import Header from '@partials/HeaderMain.astro';
+import Footer from '@partials/FooterMain.astro';
+
+import { getCollection } from 'astro:content';
+
+const teas = await getCollection('teas');
+const tags = [...new Set(teas.map((tea) => tea.data.tags).flat())];
+---
+
+<Layout title='Чайна Хатинка' description='#'>
+	<Header />
+
+	<main class='py-12 flex items-center'>
+		<div class='container'>
+			<ul class='max-w-lg mx-auto flex flex-wrap justify-center gap-6 text-lg leading-none'>
+				{
+					tags.map((tag) => (
+						<li class='inline-flex'>
+							<a
+								class='rounded-lg border border-dotted border-[#a1a1a1] bg-[#F8FCFD] px-6 py-4 text-surface transition-colors hover:bg-yellow-3'
+								href={`/tags/${tag}`}>
+								{tag}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+	</main>
+
+	<Footer />
+</Layout>

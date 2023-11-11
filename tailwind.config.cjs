@@ -24,9 +24,9 @@ module.exports = {
 		// whitelist: ['w-3/4'],
 
 		/*===================================<Typography>===================================*/
-		// fontFamily: {
-		// 	Roboto: ['Roboto Mono', 'sans-serif'],
-		// },
+		fontFamily: {
+			Shantell: ['Shantell Sans', 'sans-serif'],
+		},
 		/*===================================<Extend>===================================*/
 		extend: {
 			zIndex: {

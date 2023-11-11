@@ -9,6 +9,8 @@
 			"@pages/*": ["src/pages/*"],
 			"@utils": ["src/js/base/utils.ts"],
 			"@js/*": ["src/js/*"]
-		}
+		},
+		"strictNullChecks": true,
+		"allowJs": true
 	}
 }

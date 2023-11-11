@@ -1,0 +1,78 @@
+---
+import Layout from '@layouts/MainLayout.astro';
+import Header from '@partials/HeaderMain.astro';
+import Footer from '@partials/FooterMain.astro';
+
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import { formatDate } from '@utils';
+
+export async function getStaticPaths() {
+	const blogEntries = await getCollection('teas');
+	return blogEntries.map((entry) => ({
+		params: { slug: entry.slug },
+		props: { entry },
+	}));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout title='Наші чаї'>
+	<Header />
+
+	<main class='py-12'>
+		<section class='container'>
+			<article class='flex flex-col gap-8'>
+				<header>
+					<div class='flex flex-col items-center gap-6 text-center'>
+						<figure class='flex flex-col items-center gap-10'>
+              <figcaption class="flex flex-col items-center gap-8">
+								<h1>{entry.data.title}</h1>
+
+                <h2 class='max-w-[600px]'>{entry.data.description}</h2>
+							</figcaption>
+
+							<Image
+								class='rounded-2xl aspect-[520/292.42] object-cover'
+								src={entry.data.image}
+								alt={entry.data.title}
+								width={520}
+                height={292.42}
+							/>
+						</figure>
+
+						<span>Орієнтовна вартість: 161 грн за 10 гр</span>
+					</div>
+				</header>
+
+				<div class='prose prose-lg'>
+					<Content />
+				</div>
+
+				<div class='flex items-center justify-between gap-4'>
+					<time class='italic'
+						>Додано: {formatDate(`${entry.data.pubDate}`)}</time
+					>
+
+					<ul class='flex flex-wrap gap-2 text-lg leading-none'>
+						{
+							entry.data.tags.map((tag) => (
+								<li class='inline-flex'>
+									<a
+										class='rounded-lg border border-dotted border-[#a1a1a1] bg-[#F8FCFD] px-4 py-2 text-surface transition-colors hover:bg-yellow-3'
+										href={`/tags/${tag}`}>
+										{tag}
+									</a>
+								</li>
+							))
+						}
+					</ul>
+				</div>
+			</article>
+		</section>
+	</main>
+
+	<Footer />
+</Layout>

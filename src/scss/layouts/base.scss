@@ -7,12 +7,12 @@
 
 	html,
 	body {
-		@apply h-full;
+		@apply h-full min-h-screen;
 	}
 
 	body {
     //base styles
-		@apply h-auto py-4 mx-auto max-w-5xl dark:bg-choco bg-white text-neutral-900 dark:text-white bg-background;
+		@apply py-4 mx-auto max-w-5xl dark:bg-choco bg-white font-Shantell text-neutral-900 dark:text-white bg-background;
 
 		// scroll blocked
 		.lock & {
@@ -37,4 +37,12 @@
       @apply min-w-0;
 		}
 	}
+
+  h1 {
+    @apply text-5xl font-extrabold;
+  }
+
+  h2 {
+    @apply text-3xl font-bold;
+  }
 }

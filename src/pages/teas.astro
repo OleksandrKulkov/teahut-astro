@@ -2,30 +2,30 @@
 import Layout from '@layouts/MainLayout.astro';
 import Header from '@partials/HeaderMain.astro';
 import Footer from '@partials/FooterMain.astro';
+import TeaPost from '@partials/TeaPost.astro';
 
-import { getCollection } from "astro:content";
+import { getCollection } from 'astro:content';
 
-const allTeas = await getCollection("teas");
+const teas = await getCollection('teas');
+const pageTitle = 'Наші чаї';
 ---
 
-<Layout title='Наші чаї'>
+<Layout title={pageTitle}>
 	<Header />
 
 	<main class='py-12'>
 		<div class='container prose prose-lg'>
-			<h1>Наші чаї</h1>
+			<h1>{pageTitle}</h1>
 
-      <ul class="grid gap-12">
-        <!-- {allTeas.map((tea) => 
-          <BlogTeas 
-              url={`/teas/${tea.slug}/`}
-              title={tea.data.title}
-              subtitle={tea.data.subtitle}
-              image={tea.data.image}
-              pubDate={tea.data.pubDate}
-              price={tea.data.price}
-          />)} -->
-      </ul>
+			<ul class='not-prose grid gap-12'>
+				{
+					teas.map((tea) => (
+						<li>
+							<TeaPost props={tea}  />
+						</li>
+					))
+				}
+			</ul>
 		</div>
 	</main>
 

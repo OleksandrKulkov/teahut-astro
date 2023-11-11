@@ -4,7 +4,7 @@ subtitle: Любао 2005 року з Вуджов
 description: Любао 2005 року з листя диких дерев із Вуджов, Ґвансі.
 pubDate: 2023-09-07
 price: 4.14
-image: "/teas/2005-liubao/1.jpg"
+image: './2005-liubao/1.jpg'
 category: ["Чорні чаї"]
 tags: ["Хейча", "Витримані чаї"]
 ---

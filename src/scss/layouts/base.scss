@@ -49,4 +49,8 @@
   h2 {
     @apply text-3xl font-bold;
   }
+
+  img.transition-transform {
+    image-rendering: pixelated;
+  }
 }

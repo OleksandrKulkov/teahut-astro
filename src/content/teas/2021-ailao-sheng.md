@@ -4,7 +4,7 @@ subtitle: Шен пуер із Айлао; весна 2021 року
 description: Високогоряний Шен пуер із Айлао; весна 2021 року, Юньнань, Китай
 pubDate: 2022-06-17
 price: 2.8
-image: "/teas/2021-ailao-sheng/1.jpeg"
+image: "./2021-ailao-sheng/1.jpeg"
 category: ["Шен пуери"]
 tags: ["Шен пуери", "Чаї з дерев"]
 ---

@@ -1,19 +1,20 @@
 ---
 import Layout from '@layouts/MainLayout.astro';
+
 import Header from '@partials/HeaderMain.astro';
 import Footer from '@partials/FooterMain.astro';
 
-import Post from '@partials/TeaPost.astro';
+const pageTitle = 'Чайна Хатинка';
 ---
 
-<Layout title='Чайна Хатинка' description='#'>
+<Layout title={pageTitle} description='#'>
 	<Header />
 
 	<main class="py-12">
 		<section>
 			<div class='container'>
 				<div class='prose prose-lg'>
-          <h1>Чайна Хатинка</h1>
+          <h1>{pageTitle}</h1>
           <h2>"Хатинка Чайного Мудреця"<br>вітає вас!</h2>
           <p>Кожен із нас шукає своєї досконалости так, як він її розуміє, залежно від того знання і контексту, який він чи вона отримали за своє життя, та від того, що в нього закладено Природою...</p>
           <p>Ми, як і багато хто до нас, шукаємо Довершености у своєму житті через Чай – через ту Традицію, підвалини якої було закладено дуже давно. Ми не намагаємося відкрити щось нове, досі невідоме. Навпаки, за допомогою простих метод ми глибше занурюємось у навколишнє, у те, що маємо саме цієї миті. Якщо Надзвичайне й існує, воно мусить бути тут і зараз...</p>

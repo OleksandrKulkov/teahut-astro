@@ -1,18 +1,21 @@
 ---
 import Layout from '@layouts/MainLayout.astro';
+
 import Header from '@partials/HeaderMain.astro';
 import Footer from '@partials/FooterMain.astro';
 
 import teakettle from '@public/teakettle.gif';
 import { Image } from 'astro:assets';
+
+const pageTitle = 'Про нас';
 ---
 
-<Layout title='Про нас'>
+<Layout title={pageTitle}>
 	<Header />
 
 	<main class='py-12'>
 		<div class='container prose prose-lg'>
-			<h1>Про нас</h1>
+			<h1>{pageTitle}</h1>
 			<p>
 				Ми дуже раді бачити вас у нашій Чайній Хатинці – "Хатинці Чайного
 				Мудреця"! Тут на вас чекає підбірка статей на чайну тематику, у яких

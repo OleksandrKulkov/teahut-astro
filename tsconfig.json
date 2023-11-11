@@ -8,7 +8,8 @@
 			"@partials/*": ["src/partials/*"],
 			"@pages/*": ["src/pages/*"],
 			"@utils": ["src/js/base/utils.js"],
-			"@js/*": ["src/js/*"]
+			"@js/*": ["src/js/*"],
+      "@scss/*": ["src/scss/*"]
 		},
 		"strictNullChecks": true,
 		"allowJs": true

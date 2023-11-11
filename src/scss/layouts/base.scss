@@ -7,12 +7,12 @@
 
 	html,
 	body {
-		@apply h-full min-h-screen;
+		@apply min-h-screen;
 	}
 
 	body {
     //base styles
-		@apply py-4 mx-auto max-w-5xl dark:bg-choco bg-white font-Shantell text-neutral-900 dark:text-white bg-background;
+		@apply py-4 mx-auto max-w-5xl dark:bg-choco bg-gray-100 font-Shantell dark:text-gray-100 text-surface bg-background;
 
 		// scroll blocked
 		.lock & {
@@ -24,7 +24,7 @@
 	}
 
 	.wrapper {
-    @apply flex flex-col min-h-full overflow-hidden rounded-2xl dark:bg-surface bg-[#f2e9bf];
+    @apply min-h-[inherit] flex flex-col overflow-hidden rounded-2xl dark:bg-surface bg-neutral-50;
 		@supports (overflow: clip) {
 			overflow: clip;
 		}
@@ -37,6 +37,10 @@
       @apply min-w-0;
 		}
 	}
+
+  .header > div, .footer {
+    @apply dark:bg-choco bg-neutral-400;
+  }
 
   h1 {
     @apply text-5xl font-extrabold;

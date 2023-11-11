@@ -1,11 +1,17 @@
 :root {
+	.prose *:not(a) {
+		@apply text-neutral-900;
+	}
+
+  &:is(.dark) .prose *:not(a) {
+    @apply text-gray-100;
+  }
+
+	.prose a {
+		@apply text-yellow-300 transition-colors hover:text-yellow-500;
+	}
+
   .prose {
     @apply max-w-none;
-    & * {
-      @apply text-gray-1;
-    }
-    a {
-      @apply text-yellow-3 hover:text-yellow-5 transition-colors;
-    }
   }
 }

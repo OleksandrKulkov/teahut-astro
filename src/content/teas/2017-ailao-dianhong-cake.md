@@ -7,7 +7,7 @@ description: Гори Айлао; весна 2017 року.
 image: "./2017-ailao-dianhong-cake/1.jpg"
 category: ["Червоні чаї"]
 tags: ["Червоні чаї", "Дяньхони", "Чаї з дерев"]
-slides: ['./2005-liubao/1.jpg', './2005-liubao/2.jpg', './2005-liubao/3.jpg', './2005-liubao/4.jpg', './2005-liubao/5.jpg']
+slides: ['./2017-ailao-dianhong-cake/1.jpg', './2017-ailao-dianhong-cake/2.jpg', './2017-ailao-dianhong-cake/3.jpg', './2017-ailao-dianhong-cake/4.jpg', './2017-ailao-dianhong-cake/5.jpg']
 ---
 
 Високо в горах Айлао (2200 м) ці дерева часто купаються в туманах і росі й насолоджуються перевагами близького сонечка. Їм уже більше сотні років, і зростають вони в диких умовах серед чагарників та инших лісових дерев.

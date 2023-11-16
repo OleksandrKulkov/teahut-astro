@@ -13,9 +13,10 @@ const tags = [...new Set(teas.map((tea) => tea.data.tags).flat())];
 <Layout title='Чайна Хатинка' description='#'>
 	<Header />
 
-	<main class='py-12 flex items-center'>
+	<main class='flex items-center py-12'>
 		<div class='container'>
-			<ul class='max-w-lg mx-auto flex flex-wrap justify-center gap-6 text-lg leading-none'>
+			<ul
+				class='mx-auto flex max-w-lg flex-wrap justify-center gap-6 text-lg leading-none'>
 				{
 					tags.map((tag) => (
 						<li class='inline-flex'>

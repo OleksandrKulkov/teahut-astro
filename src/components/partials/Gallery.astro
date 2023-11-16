@@ -3,7 +3,7 @@ const { slides } = Astro.props;
 import { Image } from "astro:assets";
 ---
 
-<div class='!grid h-[500px] grid-cols-[1fr,120px]'>
+<div class='!grid h-[500px] grid-cols-[460px,120px]'>
 	<div class='swiper main-slider'>
 		<div class='swiper-wrapper'>
 			{slides.map(slide => (
@@ -24,3 +24,5 @@ import { Image } from "astro:assets";
 		</div>
 	</div>
 </div>
+
+<script src="../../assets/js/components/swiper.js"></script>

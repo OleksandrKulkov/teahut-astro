@@ -8,7 +8,7 @@ import TeaPost from '@partials/TeaPost.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
-  const teas = await getCollection('teas');
+	const teas = await getCollection('teas');
 	const uniqueTags = [...new Set(teas.map((tea) => tea.data.tags).flat())];
 
 	return uniqueTags.map((tag) => {
@@ -32,7 +32,7 @@ const { teas } = Astro.props;
 				{
 					teas.map((tea) => (
 						<li>
-							<TeaPost props={tea}  />
+							<TeaPost props={tea} />
 						</li>
 					))
 				}

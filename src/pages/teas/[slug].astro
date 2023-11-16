@@ -30,10 +30,10 @@ const { Content } = await entry.render();
 				<header>
 					<div class='flex flex-col items-center gap-6 text-center'>
 						<figure class='flex flex-col items-center gap-10'>
-              <figcaption class="flex flex-col items-center gap-8">
+							<figcaption class='flex flex-col items-center gap-8'>
 								<h1>{entry.data.title}</h1>
 
-                <h2 class='max-w-[600px]'>{entry.data.description}</h2>
+								<h2 class='max-w-[600px]'>{entry.data.description}</h2>
 							</figcaption>
 
 							<!-- <Image
@@ -43,8 +43,8 @@ const { Content } = await entry.render();
 								width={520}
                 height={292.42}
 							/> -->
-              
-              <Gallery slides={entry.data.slides} />
+
+							<Gallery slides={entry.data.slides} />
 						</figure>
 
 						<span>Орієнтовна вартість: 161 грн за 10 гр</span>

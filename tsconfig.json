@@ -4,12 +4,16 @@
 		"baseUrl": ".",
 		"paths": {
 			"@public/*": ["public/*"],
-			"@layouts/*": ["src/layouts/*"],
-			"@partials/*": ["src/partials/*"],
+
+			"@layouts/*": ["src/components/layouts/*"],
+			"@partials/*": ["src/components/partials/*"],
+
 			"@pages/*": ["src/pages/*"],
-			"@utils": ["src/js/base/utils.js"],
-			"@js/*": ["src/js/*"],
-      "@scss/*": ["src/scss/*"]
+
+			"@utils": ["src/assets/js/base/utils.js"],
+			"@js/*": ["src/assets/js/*"],
+
+			"@scss/*": ["src/assets/scss/*"]
 		},
 		"strictNullChecks": true,
 		"allowJs": true

@@ -3,6 +3,7 @@ import Layout from '@layouts/MainLayout.astro';
 
 import Header from '@partials/HeaderMain.astro';
 import Footer from '@partials/FooterMain.astro';
+import Gallery from '@partials/Gallery.astro';
 
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
@@ -35,13 +36,15 @@ const { Content } = await entry.render();
                 <h2 class='max-w-[600px]'>{entry.data.description}</h2>
 							</figcaption>
 
-							<Image
+							<!-- <Image
 								class='rounded-2xl aspect-[520/292.42] object-cover'
 								src={entry.data.image}
 								alt={entry.data.title}
 								width={520}
                 height={292.42}
-							/>
+							/> -->
+              
+              <Gallery slides={entry.data.slides} />
 						</figure>
 
 						<span>Орієнтовна вартість: 161 грн за 10 гр</span>

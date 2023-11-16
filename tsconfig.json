@@ -3,6 +3,8 @@
 	"compilerOptions": {
 		"baseUrl": ".",
 		"paths": {
+			"@/*": ["./*"],
+
 			"@public/*": ["public/*"],
 
 			"@layouts/*": ["src/components/layouts/*"],
@@ -10,9 +12,10 @@
 
 			"@pages/*": ["src/pages/*"],
 
-			"@utils": ["src/assets/js/base/utils.js"],
-			"@js/*": ["src/assets/js/*"],
+			"@content/*": ["src/content/*"],
 
+			"@js/*": ["src/assets/js/*"],
+			"@utils": ["src/assets/js/base/utils"],
 			"@scss/*": ["src/assets/scss/*"]
 		},
 		"strictNullChecks": true,

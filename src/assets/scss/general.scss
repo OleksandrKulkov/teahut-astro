@@ -15,3 +15,12 @@
     @apply max-w-none;
   }
 }
+
+.thumbnail-slider {
+  .swiper-slide {
+    @apply transition-opacity;
+    &:not(.swiper-slide-thumb-active) {
+      @apply opacity-50;
+    }
+  }
+}

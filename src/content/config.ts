@@ -12,6 +12,7 @@ const teas = defineCollection({
 			image: image(),
 			category: z.array(z.string()).optional(),
 			tags: z.array(z.string()),
+			slides: z.array(image()),
 		}),
 });
 

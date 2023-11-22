@@ -9,6 +9,7 @@ const thumbnailSlider = new Swiper('.thumbnail-slider', {
 const mainSlider = new Swiper('.main-slider', {
 	modules: [Thumbs],
 	speed: 500,
+	direction: 'vertical',
 	thumbs: {
 		swiper: thumbnailSlider,
 	},

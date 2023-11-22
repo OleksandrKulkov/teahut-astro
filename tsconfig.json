@@ -9,7 +9,8 @@
 
 			"@layouts/*": ["src/components/layouts/*"],
 			"@partials/*": ["src/components/partials/*"],
-
+  
+			
 			"@pages/*": ["src/pages/*"],
 
 			"@content/*": ["src/content/*"],

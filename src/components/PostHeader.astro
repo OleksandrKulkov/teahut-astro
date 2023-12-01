@@ -1,0 +1,13 @@
+---
+import Container from "./Container.astro";
+import { formatDate } from "../utils/helpers.js";
+
+const { title, author, pubDate } = Astro.props;
+const containerMaxWidth = "80%";
+---
+
+<Container {containerMaxWidth}>
+    <h1 class="header-title">{title}</h1>
+    <h4 class="header-author">{author}</h4>
+    <p class="header-date">Опубліковано: {formatDate(pubDate)}</p>
+</Container>

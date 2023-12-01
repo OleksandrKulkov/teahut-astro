@@ -5,7 +5,7 @@ import Navigation from '../components/Navigation.astro';
 import Container from '../components/Container.astro';
 import '../styles/global.css';
 
-const { pageTitle, containerMaxWidth } = Astro.props;
+const { pageTitle = "Чайна Хатинка", containerMaxWidth = "900px" } = Astro.props;
 ---
 
 <html lang="uk">

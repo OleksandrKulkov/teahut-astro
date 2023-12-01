@@ -127,7 +127,7 @@
     }
     
     :where(h1,h2,h3,h4,h5,h6){
-        text-wrap:balance;
+        /* text-wrap:balance; */
         font-weight:var(--font-weight-9);
         line-height:var(--font-lineheight-1)
     }
@@ -139,7 +139,7 @@
     
     :where(h2){
         font-size:var(--font-size-6);
-        max-inline-size:var(--size-header-2)
+        max-inline-size:var(--size-header-4)
     }
     
     :where(h3){
@@ -293,9 +293,9 @@
         padding-inline-start:var(--size-2)
     }
     
-    :where(li,dd,figcaption){
+    /* :where(li,dd,figcaption){
         max-inline-size:var(--size-content-2)
-    }
+    } */
     
     :where(p){
         text-wrap:pretty;
@@ -314,9 +314,16 @@
     
     :where(figure)>:where(figcaption){text-wrap:balance;font-size:var(--font-size-1)}
     
-    :where(blockquote,:not(blockquote)>cite){border-inline-start-width:var(--border-size-3)}
+    :where(blockquote,:not(blockquote)>cite){
+         /* border-inline-start-width:var(--border-size-3) */
+    }
     
-    :where(blockquote){display:grid;gap:var(--size-3);max-inline-size:var(--size-content-2);padding-block:var(--size-3);padding-inline:var(--size-4)}
+    :where(blockquote){
+        display:grid;
+        gap:var(--size-3);
+        /* max-inline-size:var(--size-content-2);
+        padding-block:var(--size-3); */
+        padding-inline:var(--size-4)}
     
     :where(:not(blockquote)>cite){padding-inline-start:var(--size-2)}
     

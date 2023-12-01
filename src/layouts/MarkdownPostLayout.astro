@@ -8,6 +8,7 @@ const containerMaxWidth = "900px";
 
 <BaseLayout pageTitle={frontmatter.title} {containerMaxWidth}>
     <h1 class="header-title">{frontmatter.title}</h1>
+    <h3 class="header-subtitle">{frontmatter.subtitle}</h3>
     <h4 class="header-author">{frontmatter.author}</h4>
     <p class="header-date">Опубліковано: {formatDate(frontmatter.pubDate)}</p>
     <slot />
@@ -18,7 +19,8 @@ const containerMaxWidth = "900px";
       color: var(--choco);
     }
 
-    .header-title {
+    .header-title,
+    .header-subtitle {
         text-align: center;
     }
 

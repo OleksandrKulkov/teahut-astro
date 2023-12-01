@@ -2,7 +2,7 @@
 title: Млинець Дяньхона з Айлао
 subtitle: Юньнань, Китай; весна 2017 року
 pubDate: 2023-09-07
-price: 2.8
+price: 2.4
 description: Гори Айлао; весна 2017 року.
 image: "/images/teas/2017-ailao-dianhong-cake/2017-ailao-dianhong-cake-1.jpg"
 category: ["Червоні чаї"]

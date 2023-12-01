@@ -8,7 +8,7 @@ const { title, subtitle, url, price, image } = Astro.props;
     <article class="post-preview__article">
       <picture>
         <source srcset={image} type="image/webp">
-        <img class="post-preview__img" src={image} alt=`Світлина для чаю ${title}` >
+        <img class="post-preview__img" src={image} alt={`Світлина для чаю ${title}`} >
       </picture>      
       <div class="post-preview__text">
         <h2 class="tea-title">{title}</h2>

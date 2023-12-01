@@ -1,0 +1,25 @@
+---
+// Import global CSS
+import "the-new-css-reset/css/reset.css";
+import "../../assets/scss/style.scss";
+
+// Import Head component
+import Head from '@partials/Head.astro';
+
+// Default values for props
+const { title="default title", description="default description" } = Astro.props;
+---
+
+<!doctype html>
+
+<html lang="uk">
+
+	<Head {title} {description} />
+  
+	<body>
+    <div class="wrapper">
+      <slot />
+    </div>
+	</body>
+  
+</html>

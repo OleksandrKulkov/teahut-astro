@@ -1,0 +1,40 @@
+---
+import { exchangePrice } from '@utils';
+import { Image } from 'astro:assets';
+
+const { props } = Astro.props;
+---
+
+<article>
+	<figure class='grid grid-cols-[1fr,1.2fr] gap-24'>
+		<a
+			class='group relative aspect-[250/160] overflow-hidden rounded-2xl'
+			href={`/teas/${props.slug}`}>
+			<Image
+				class='absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-110'
+				src={props.data.image}
+				alt={`Світлина для чаю ${props.data.title}`}
+			/>
+		</a>
+
+		<figcaption class='flex flex-col gap-6 text-lg'>
+			<div class='flex flex-col gap-4'>
+				<h2 class='text-2xl font-extrabold'>
+					<a href={`/teas/${props.slug}`}>{props.data.title}</a>
+				</h2>
+
+				<h4 class='font-semibold'>{props.data.subtitle}</h4>
+			</div>
+
+			<div class='flex items-center gap-4'>
+				Орієнтовна вартість:
+				<span class='font-bold'>
+					<strong class='!text-yellow-500'>
+						{exchangePrice(props.data.price).toFixed()} грн{' '}
+					</strong>
+					 за 10гр
+				</span>
+			</div>
+		</figcaption>
+	</figure>
+</article>

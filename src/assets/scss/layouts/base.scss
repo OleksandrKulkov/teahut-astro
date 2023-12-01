@@ -1,0 +1,56 @@
+@layer base {
+
+  html {
+    visibility: hidden;
+    // scrollbar-gutter: stable both-edges;
+  }
+
+	html,
+	body {
+		@apply min-h-screen;
+	}
+
+	body {
+    //base styles
+		@apply py-4 mx-auto max-w-5xl dark:bg-choco bg-gray-100 font-Shantell dark:text-gray-100 text-surface bg-background;
+
+		// scroll blocked
+		.lock & {
+      @apply overflow-hidden overscroll-none touch-none;
+		}
+		// site loaded
+		.loaded & {
+		}
+	}
+
+	.wrapper {
+    @apply min-h-[inherit] flex flex-col overflow-hidden rounded-2xl dark:bg-surface bg-neutral-50;
+		@supports (overflow: clip) {
+			overflow: clip;
+		}
+		// pin the footer
+		> main {
+      @apply flex-auto;
+		}
+		// fix for sliders
+		> * {
+      @apply min-w-0;
+		}
+	}
+
+  .header > div, .footer {
+    @apply dark:bg-choco bg-neutral-400;
+  }
+
+  h1 {
+    @apply text-5xl font-extrabold;
+  }
+
+  h2 {
+    @apply text-3xl font-bold;
+  }
+
+  img.transition-transform {
+    image-rendering: pixelated;
+  }
+}

@@ -1,0 +1,26 @@
+:root {
+	.prose *:not(a) {
+		@apply text-neutral-900;
+	}
+
+  &:is(.dark) .prose *:not(a) {
+    @apply text-gray-100;
+  }
+
+	.prose a {
+		@apply text-yellow-300 transition-colors hover:text-yellow-500;
+	}
+
+  .prose {
+    @apply max-w-none;
+  }
+}
+
+.thumbnail-slider {
+  .swiper-slide {
+    @apply transition-opacity;
+    &:not(.swiper-slide-thumb-active) {
+      @apply opacity-50;
+    }
+  }
+}

@@ -1,36 +1,44 @@
 ---
-import { getCollection } from "astro:content";
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import BlogTeas from "../../components/BlogTeas.astro";
+import Layout from '@layouts/MainLayout.astro';
+
+import Header from '@partials/HeaderMain.astro';
+import Footer from '@partials/FooterMain.astro';
+import TeaPost from '@partials/TeaPost.astro';
+
+import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
-    const allTeas = await getCollection("teas");
+	const teas = await getCollection('teas');
+	const uniqueTags = [...new Set(teas.map((tea) => tea.data.tags).flat())];
 
-    const uniqueTags = [...new Set(allTeas.map((tea) => tea.data.tags).flat())];
-
-    return uniqueTags.map((tag) => {
-        const filteredTeas = allTeas.filter((tea) => tea.data.tags.includes(tag));
-        return {
-            params: { tag },
-            props: { teas: filteredTeas },
-        };
-    });
+	return uniqueTags.map((tag) => {
+		const filteredTeas = teas.filter((tea) => tea.data.tags.includes(tag));
+		return {
+			params: { tag },
+			props: { teas: filteredTeas },
+		};
+	});
 }
 
-const { tag } = Astro.params;
 const { teas } = Astro.props;
-const containerMaxWidth = "900px";
-
 ---
-<BaseLayout pageTitle={tag} {containerMaxWidth}>
-  <p>Чаї за маркуванням {tag}</p>
-  <ul>
-    {teas.map((tea) => 
-        <BlogTeas 
-            url={`/teas/${tea.slug}/`}
-            title={tea.data.title}
-            image={tea.data.image} 
-            pubDate={tea.data.pubDate}
-        />)}
-  </ul>
-</BaseLayout>
+
+<Layout title='Чайна Хатинка' description='#'>
+	<Header />
+
+	<main class='py-12'>
+		<div class='container'>
+			<ul class='not-prose grid gap-12'>
+				{
+					teas.map((tea) => (
+						<li>
+							<TeaPost props={tea} />
+						</li>
+					))
+				}
+			</ul>
+		</div>
+	</main>
+
+	<Footer />
+</Layout>

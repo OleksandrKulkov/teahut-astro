@@ -1,0 +1,18 @@
+//===================== Tailwind =====================//
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+//tailwind extend
+@import './layouts/base';
+@import './layouts/components';
+@import './layouts/utilities';
+
+//===================== General =====================//
+@import 'general';
+
+//===================== Components =====================//
+@import './components/accordion';
+
+//===================== Libs =====================//
+@import './libs/swiper';

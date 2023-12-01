@@ -1,0 +1,28 @@
+---
+const { slides } = Astro.props;
+import { Image } from "astro:assets";
+---
+
+<div class='!grid h-[500px] grid-cols-[460px,120px]'>
+	<div class='swiper main-slider'>
+		<div class='swiper-wrapper'>
+			{slides.map(slide => (
+        <div class='swiper-slide'>
+          <Image class='w-full h-full object-cover' src={slide} alt={'#'} />
+        </div>
+      ))}
+		</div>
+	</div>
+
+	<div class='swiper thumbnail-slider w-full'>
+		<div class='swiper-wrapper !grid grid-rows-5'>
+      {slides.map(slide => (
+        <div class='swiper-slide cursor-pointer'>
+          <Image class='w-full h-full object-cover' src={slide} alt={'#'} />
+        </div>
+      ))}
+		</div>
+	</div>
+</div>
+
+<script src="../../assets/js/components/swiper.js"></script>

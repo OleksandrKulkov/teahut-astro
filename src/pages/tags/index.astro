@@ -1,38 +1,36 @@
 ---
-import { getCollection } from "astro:content";
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import Layout from '@layouts/MainLayout.astro';
 
-const allTeas = await getCollection("teas");
-const tags = [...new Set(allTeas.map((tea) => tea.data.tags).flat())];
-const pageTitle = "Покажчик міток";
-const containerMaxWidth = "900px";
+import Header from '@partials/HeaderMain.astro';
+import Footer from '@partials/FooterMain.astro';
 
+import { getCollection } from 'astro:content';
+
+const teas = await getCollection('teas');
+const tags = [...new Set(teas.map((tea) => tea.data.tags).flat())];
 ---
 
-<BaseLayout {pageTitle} {containerMaxWidth}>
-    <ul class="tags">
-        {tags.map((tag) => (
-          <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
-        ))}
-    </ul>
-</BaseLayout>
+<Layout title='Чайна Хатинка' description='#'>
+	<Header />
 
-<style>
-    a {
-    color: var(--choco);
-  }
+	<main class='flex items-center py-12'>
+		<div class='container'>
+			<ul
+				class='mx-auto flex max-w-lg flex-wrap justify-center gap-6 text-lg leading-none'>
+				{
+					tags.map((tag) => (
+						<li class='inline-flex'>
+							<a
+								class='rounded-lg border border-dotted border-[#a1a1a1] bg-[#F8FCFD] px-6 py-4 text-surface transition-colors hover:bg-yellow-300'
+								href={`/tags/${tag}`}>
+								{tag}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+	</main>
 
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .tag {
-    margin: 0.25em;
-    border: dotted 1px #a1a1a1;
-    border-radius: .5em;
-    padding: .5em 1em;
-    font-size: 1.15em;
-    background-color: #F8FCFD;
-  }
-</style>
+	<Footer />
+</Layout>

@@ -3,26 +3,31 @@ const { slides } = Astro.props;
 import { Image } from "astro:assets";
 ---
 
-<div class='!grid h-[500px] grid-cols-[460px,120px]'>
-	<div class='swiper main-slider'>
-		<div class='swiper-wrapper'>
-			{slides.map(slide => (
-        <div class='swiper-slide'>
-          <Image class='w-full h-full object-cover' src={slide} alt={'#'} />
-        </div>
-      ))}
-		</div>
-	</div>
+<div class='flex md:flex-row flex-col justify-center md:h-[500px] w-full max-w-[580px] rounded-2xl overflow-hidden'>
+  <div class="md:basis-[460px] md:grow-0 md:shrink min-w-0">
+    <div class='swiper main-slider h-full'>
+      <div class='swiper-wrapper'>
+        {slides.map(slide => (
+          <div class='swiper-slide aspect-square'>
+            <Image class='w-full h-full object-cover' src={slide} alt={'#'} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+  
 
-	<div class='swiper thumbnail-slider w-full'>
-		<div class='swiper-wrapper !grid grid-rows-5'>
-      {slides.map(slide => (
-        <div class='swiper-slide cursor-pointer'>
-          <Image class='w-full h-full object-cover' src={slide} alt={'#'} />
-        </div>
-      ))}
-		</div>
-	</div>
+  <div class="md:basis-[120px] md:grow-0 md:shrink">
+    <div class='swiper thumbnail-slider h-full'>
+      <div class='swiper-wrapper md:!grid md:grid-rows-5'>
+        {slides.map(slide => (
+          <div class='swiper-slide cursor-pointer max-md:basis-1/5 aspect-square'>
+            <Image class='w-full h-full object-cover' src={slide} alt={'#'} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
 </div>
 
 <script src="../../assets/js/components/swiper.js"></script>

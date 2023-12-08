@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Thumbs } from 'swiper/modules';
+import { EffectFade, Thumbs } from 'swiper/modules';
 
 const thumbnailSlider = new Swiper('.thumbnail-slider', {
 	freeMode: true,
@@ -7,10 +7,15 @@ const thumbnailSlider = new Swiper('.thumbnail-slider', {
 });
 
 const mainSlider = new Swiper('.main-slider', {
-	modules: [Thumbs],
+	modules: [Thumbs, EffectFade],
 	speed: 500,
-	direction: 'vertical',
+	effect: 'fade',
 	thumbs: {
 		swiper: thumbnailSlider,
+	},
+	breakpoints: {
+		767.98: {
+			direction: 'vertical',
+		},
 	},
 });
